@@ -32,8 +32,6 @@ stdenvNoCC.mkDerivation {
     export dontUpdateAutotoolsGnuConfigScripts="yes"
   '';
 
-  # hardeningDisable = [ "all" ];
-
   preConfigure = ''
     find . -name '*.info' | xargs touch
     touch intl/plural.c
