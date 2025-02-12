@@ -7,7 +7,7 @@
 }:
 
 stdenvNoCC.mkDerivation {
-  pname = "gdb+os161";
+  pname = "os161-gdb";
   version = "7.8+2.1";
 
   enableParallelBuilding = true;

@@ -10,7 +10,7 @@
 }:
 
 stdenvNoCC.mkDerivation {
-  pname = "gcc+os161";
+  pname = "os161-gcc";
   version = "4.8.3+2.1";
 
   enableParallelBuilding = true;

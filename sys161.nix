@@ -6,7 +6,7 @@
 }:
 
 stdenvNoCC.mkDerivation rec {
-  pname = "sys161";
+  pname = "os161-sys161";
   version = "2.0.8";
 
   enableParallelBuilding = true;

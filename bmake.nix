@@ -6,7 +6,7 @@
 }:
 
 stdenvNoCC.mkDerivation rec {
-  pname = "bmake";
+  pname = "os161-bmake";
   version = "20101215";
 
   enableParallelBuilding = true;
