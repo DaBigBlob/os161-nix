@@ -1,3 +1,4 @@
+# https://sourceware.org/legacy-ml/gdb-patches/2015-03/msg00967.html
 index 73117f3..de842c9 100644
 --- a/sim/common/sim-arange.h
 +++ b/sim/common/sim-arange.h
@@ -36,6 +37,7 @@ index 73117f3..de842c9 100644
  #endif
  #define SIM_ARANGE_C_INCLUDED
 
+# https://sourceware.org/legacy-ml/gdb-patches/2015-03/msg01021.html
 index af75562..8a9c286 100644
 --- a/sim/common/sim-inline.h
 +++ b/sim/common/sim-inline.h

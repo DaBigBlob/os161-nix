@@ -64,9 +64,11 @@ stdenvNoCC.mkDerivation {
     "--disable-libmudflap" "--disable-libssp"
     "--disable-libstdcxx" "--disable-nls"
     "--target=mips-harvard-os161"
+    
     "--with-gmp=${gmp}"
 	  "--with-mpfr=${mpfr}"
 	  "--with-mpc=${libmpc}"
+
     "--with-as=${os161-binutils}/bin/mips-harvard-os161-as"
     "--with-ld=${os161-binutils}/bin/mips-harvard-os161-ld"
     "--with-system-zlib"

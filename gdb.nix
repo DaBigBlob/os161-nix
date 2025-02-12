@@ -3,7 +3,8 @@
   CC,
   stdenvNoCC,
   fetchzip,
-  ncurses5
+  ncurses5,
+  readline
 }:
 
 stdenvNoCC.mkDerivation {
@@ -19,13 +20,17 @@ stdenvNoCC.mkDerivation {
 
   dontDisableStatic = true;
 
-  nativeBuildInputs = [
-    CC
+  buildInputs = [
+    readline
     ncurses5
   ];
 
+  nativeBuildInputs = [
+    CC
+  ];
+
   patches = [
-    ./gdb-os161.patch # https://sourceware.org/bugzilla/show_bug.cgi?id=16827
+    ./os161-gdb.patch # https://sourceware.org/bugzilla/show_bug.cgi?id=16827
   ];
 
   postPatch = ''
@@ -43,6 +48,8 @@ stdenvNoCC.mkDerivation {
 
   configureFlags = [
     "--target=mips-harvard-os161"
+
+    "--with-system-readline"
   ];
 
   postInstall = ''
