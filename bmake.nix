@@ -49,8 +49,11 @@ stdenvNoCC.mkDerivation rec {
     mkdir -p $out/bin
     mkdir -p $out/share/man/man1
     mkdir -p $out/share/mk
+
     cp bmake $out/bin/
+    ln -s $out/bin/bmake $out/bin/${pname}
     cp bmake.1 $out/share/man/man1/
+    ln -s $out/share/man/man1/bmake.1 $out/share/man/man1/${pname}.1
     ./mk/install-mk $out/share/mk
   '';
 }
