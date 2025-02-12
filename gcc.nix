@@ -3,10 +3,11 @@
   CC,
   stdenvNoCC,
   fetchzip,
-  binutils,
+  os161-binutils,
   gmp,
   mpfr,
-  libmpc
+  libmpc,
+  zlib
 }:
 
 stdenvNoCC.mkDerivation {
@@ -23,7 +24,7 @@ stdenvNoCC.mkDerivation {
   dontDisableStatic = true;
 
   buildInputs = [
-    binutils
+    os161-binutils
   ];
 
   nativeBuildInputs = [
@@ -31,6 +32,7 @@ stdenvNoCC.mkDerivation {
     gmp
     mpfr
     libmpc
+    zlib
   ];
 
   postPatch = ''
@@ -65,6 +67,9 @@ stdenvNoCC.mkDerivation {
     "--with-gmp=${gmp}"
 	  "--with-mpfr=${mpfr}"
 	  "--with-mpc=${libmpc}"
+    "--with-as=${os161-binutils}/bin/mips-harvard-os161-as"
+    "--with-ld=${os161-binutils}/bin/mips-harvard-os161-ld"
+    "--with-system-zlib"
   ];
 
   postInstall = ''
