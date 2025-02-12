@@ -6,7 +6,7 @@
 }:
 
 stdenvNoCC.mkDerivation {
-  pname = "binutils+os161";
+  pname = "os161-binutils";
   version = "2.24+2.1";
 
   enableParallelBuilding = true;
@@ -23,6 +23,7 @@ stdenvNoCC.mkDerivation {
   dontDisableStatic = true;
 
   postPatch = ''
+    # https://github.com/NixOS/nixpkgs/blob/release-21.11/pkgs/build-support/setup-hooks/update-autotools-gnu-config-scripts.sh
     export dontUpdateAutotoolsGnuConfigScripts="yes"
   '';
 

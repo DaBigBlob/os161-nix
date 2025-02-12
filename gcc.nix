@@ -34,6 +34,7 @@ stdenvNoCC.mkDerivation {
   ];
 
   postPatch = ''
+    # https://github.com/NixOS/nixpkgs/blob/release-21.11/pkgs/build-support/setup-hooks/update-autotools-gnu-config-scripts.sh
     export dontUpdateAutotoolsGnuConfigScripts="yes"
   '';
 
